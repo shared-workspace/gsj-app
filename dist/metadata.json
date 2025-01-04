@@ -1,0 +1,6 @@
+{
+    "name": "GTK JS Application",
+    "description": "Simple GTK Application written in JavaScript",
+    "uuid": "gtk-js-application",
+    "version": ["45"]
+}

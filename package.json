@@ -1,0 +1,35 @@
+{
+  "name": "gjs-app",
+  "version": "1.0.0",
+  "description": "GTK 4.0 with GJS",
+  "main": "src/main.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:app": "pnpm node esbuild.js",
+    "build": "pnpm build:app",
+    "start:app": "gjs -m dist/main.js",
+    "debug:app": "GTK_DEBUG=interactive pnpm start:app",
+    "start": "pnpm build && pnpm start:app",
+    "validate": "pnpm validate:types",
+    "validate:types": "tsc --noEmit",
+    "clear": "rm -rf dist @types",
+    "dev": "nodemon --watch src --ext ts --exec 'pnpm start'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^22.10.5",
+    "esbuild": "^0.24.2",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@girs/gio-2.0": "2.82.2-4.0.0-beta.19",
+    "@girs/gjs": "4.0.0-beta.19",
+    "@girs/glib-2.0": "2.82.2-4.0.0-beta.19",
+    "@girs/gtk-4.0": "4.16.3-4.0.0-beta.19",
+    "nodemon": "^3.1.9"
+  }
+}

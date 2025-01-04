@@ -1,0 +1,32 @@
+{
+    "name": "Remote GTK App Dev using GJS",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {
+            "version": "latest",
+            "noVncVersion": "1.2.0",
+            "password": "vscode",
+            "webPort": "6080",
+            "vncPort": "5901"
+        }
+    },
+    "forwardPorts": [
+        6080,
+        5901
+    ],
+    "portsAttributes": {
+        "6080": {
+            "label": "VNC web client (noVNC)",
+            "onAutoForward": "openPreview"
+        },
+        "5901": {
+            "label": "VNC TCP port",
+            "onAutoForward": "silent"
+        }
+    },
+    "hostRequirements": {
+        "memory": "9gb"
+    }
+}
